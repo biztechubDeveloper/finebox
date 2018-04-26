@@ -1,16 +1,28 @@
+<?php
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package fun
+ */
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html <?php language_attributes(); ?>> <!--<![endif]-->
+<?php wp_head(); ?>
 <head>
 
     <!-- Basic Page Needs
   ================================================== -->
-	<meta charset="utf-8">
-	<title>zFinanBox - Free Finance Html5 Templates</title>
-	<meta name="description" content="Free Responsive Html5 Css3 Templates | Zerotheme.com">
-	<meta name="author" content="www.zerotheme.com">
+	<meta charset="<?php bloginfo('charset'); ?>">
+	<meta name="description" content="width=device-width, initial-scale=1">
+	<meta name="author" content="sujan">
 	
     <!-- Mobile Specific Metas
 	================================================== -->
@@ -44,10 +56,10 @@
 		<script src="js/html5.js"></script>
 		<script src="js/css3-mediaqueries.js"></script>
 	<![endif]-->
-	
+	<?php wp_head(); ?>
 </head>
 
-<body class="archive-page">
+<body class="archive-page" <?php body_class(); ?>>
 	<div class="wrap-body">
 		<header>
 			<div class="top-bar">
@@ -289,6 +301,7 @@
 					</ul>
 				</div>
 			</div>
+			<?php wp_footer(); ?>
 		</footer>
 	</div>
 	
