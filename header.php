@@ -71,10 +71,10 @@
 				<a href="index.html"><img src="images/logo.png"></a>
 			</div>
 
-			<div id='cssmenu' >
+			<div class='cssmenu' >
 				<?php 
                 wp_nav_menu(array(
-                'theme_location' => 'menu',
+                'theme_location' => 'menu'
 
 
                 	));
