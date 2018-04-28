@@ -39,7 +39,7 @@ if ( ! function_exists( 'fun_theme_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', '_s' ),
+			'menu' => esc_html__( 'Primary', 'fun' ),
 		) );
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -78,6 +78,18 @@ add_action( 'after_setup_theme', 'fun_theme_setup' );
 * Enqueue style
 **/
 function fun_js_css(){
+wp_enqueue_style("fun-zerogrid", get_template_directory_uri().'/css/zerogrid.css');
+wp_enqueue_style("fun-style", get_template_directory_uri().'/css/style.css');
+wp_enqueue_style("fun-responsiveslides", get_template_directory_uri().'/css/responsiveslides.css');
+wp_enqueue_style("fun-carousel", get_template_directory_uri().'/font-awesome/css/font-awesome.min.css');
+wp_enqueue_style("fun-awesome", get_template_directory_uri().'/owl-carousel/owl.carousel.css');
+wp_enqueue_style("fun-menu", get_template_directory_uri().'/css/menu.css');
+wp_enqueue_style( 'fun-style', get_stylesheet_uri() );
 
+
+wp_enqueue_script( 'fun-global', get_theme_file_uri( '/js/script.js' ), array( 'jquery' ), ' ', true );
+wp_enqueue_script( 'fun-owl', get_theme_file_uri( '/owl-carousel/owl.carousel.js' ), array( 'jquery' ), ' ', true );
+wp_enqueue_script( 'fun-custom', get_theme_file_uri( '/js/custom.js' ), array( 'jquery' ), ' ', true );
 }
 add_action("wp_enqueue_scripts",'fun_js_css');
+
