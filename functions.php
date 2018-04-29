@@ -93,3 +93,8 @@ wp_enqueue_script( 'fun-custom', get_theme_file_uri( '/js/custom.js' ), array( '
 }
 add_action("wp_enqueue_scripts",'fun_js_css');
 
+/*
+* redux framework included
+*/
+include 'lib/redux/ReduxCore/framework.php';
+include 'lib/redux/sample/config.php';
