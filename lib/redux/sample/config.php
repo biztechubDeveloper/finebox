@@ -10,7 +10,7 @@
 
 
     // This is your option name where all the Redux data is stored.
-    $opt_name = "redux_demo";
+    $opt_name = "red";
 
     // This line is only for altering the demo. Can be easily removed.
     $opt_name = apply_filters( 'redux_demo/opt_name', $opt_name );
@@ -287,10 +287,29 @@
              array(
                'title'     => 'Email Address',
                'id'        => 'email',
-               'type'      =>'input',
+               'type'      =>'text',
+               'desc'      =>'email address give',
+               'default'  =>'ContacUs@Gmail.com'
+                ),
+             array(
+               'title'     => 'Phone number',
+               'id'        => 'phone',
+               'type'      =>'text',
                'desc'      =>'phone number give',
-               'defaults'  =>'12345'
-                )
+               'default'  =>'123456'
+                ),
+             array(
+               'id'            => 'opt-date-time',
+               'type'          => 'datetime',
+               'title'         => 'Date/Time Picker',
+               'subtitle'      => 'Date/Time Picker extension',
+               'split'         => true,
+               'separator'     => ' @ ',
+               'placeholder' => Array (
+                   'date' => 'Date',
+                   'time' => 'Time'
+)
+                ),
             )
     ) );
 

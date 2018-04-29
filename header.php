@@ -51,8 +51,8 @@
 					<div class="row">
 						<div class="col-2-3">
 							<ul class="list-inline">
-								<li class="mail"><span><i class="fa fa-envelope"></i> ContacUs@Gmail.com</span></li>
-								<li class="phone"><span><i class="fa fa-phone"></i>(9999) 123 888 7</span></li>
+								<li class="mail"><span><i class="fa fa-envelope"></i> <?php global $red; echo $red['email']; ?></span></li>
+								<li class="phone"><span><i class="fa fa-phone"></i><?php echo $red['phone']; ?></span></li>
 								<li class="clock"><span><i class="fa fa-clock-o"></i>Mon - Sat | 7:00 - 17:00</span></li>
 							</ul>
 						</div>
