@@ -23,13 +23,13 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="description" content="width=device-width, initial-scale=1">
 	<meta name="author" content="sujan">
-	
+
     <!-- Mobile Specific Metas
 	================================================== -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-	
-	
+
+
+
 	<!--[if lt IE 8]>
        <div style=' clear: both; text-align:center; position: relative;'>
          <a href="http://windows.microsoft.com/en-US/internet-explorer/Items/ie/home?ocid=ie6_countdown_bannercode">
@@ -53,7 +53,7 @@
 							<ul class="list-inline">
 								<li class="mail"><span><i class="fa fa-envelope"></i> <?php global $red; echo $red['email']; ?></span></li>
 								<li class="phone"><span><i class="fa fa-phone"></i><?php echo $red['phone']; ?></span></li>
-								<li class="clock"><span><i class="fa fa-clock-o"></i>Mon - Sat | 7:00 - 17:00</span></li>
+								<li class="clock"><span><i class="fa fa-clock-o"></i><?php global $red; echo $red['dat']; ?> | 7:00 - 17:00</span></li>
 							</ul>
 						</div>
 						<div class="col-1-3">
@@ -72,7 +72,7 @@
 			</div>
 
 			<div class='cssmenu' >
-				<?php 
+				<?php
                 wp_nav_menu(array(
                 'theme_location' => 'menu'
 

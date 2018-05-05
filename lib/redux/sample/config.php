@@ -34,7 +34,7 @@
     $sample_patterns_path = ReduxFramework::$_dir . '../sample/patterns/';
     $sample_patterns_url  = ReduxFramework::$_url . '../sample/patterns/';
     $sample_patterns      = array();
-    
+
     if ( is_dir( $sample_patterns_path ) ) {
 
         if ( $sample_patterns_dir = opendir( $sample_patterns_path ) ) {
@@ -299,21 +299,17 @@
                'default'  =>'123456'
                 ),
              array(
-               'id'            => 'opt-date-time',
-               'type'          => 'datetime',
-               'title'         => 'Date/Time Picker',
-               'subtitle'      => 'Date/Time Picker extension',
-               'split'         => true,
-               'separator'     => ' @ ',
-               'placeholder' => Array (
-                   'date' => 'Date',
-                   'time' => 'Time'
-)
+               'title'     => 'Phone number',
+               'id'        => 'dat',
+               'type'      =>'text',
+               'desc'      =>'phone number give',
+               'default'  =>'123456'
+
                 ),
             )
     ) );
 
-    
+
     /*
      * <--- END SECTIONS
      */
@@ -466,4 +462,3 @@
             }
         }
     }
-

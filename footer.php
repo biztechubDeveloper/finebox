@@ -1,27 +1,24 @@
 <footer>
 			<div class="top-footer">
 				<div id="owl-brand" class="owl-carousel">
+
+					<?php 
+                   $carosule = new WP_Query(array(
+                   'post_type' => 'carosule',
+                   
+
+
+                   )); ?>
+                   <?php if ( $carosule->have_posts() ) : ?>
+                   	<?php while($carosule->have_posts()) : $carosule->the_post(); ?>
 					<div class="item">
-						<a href="single.html"><img src="images/15.jpg" /></a>
+						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 					</div>
-					<div class="item">
-						<a href="single.html"><img src="images/16.jpg" /></a>
-					</div>
-					<div class="item">
-						<a href="single.html"><img src="images/17.jpg" /></a>
-					</div>
-					<div class="item">
-						<a href="single.html"><img src="images/18.jpg" /></a>
-					</div>
-					<div class="item">
-						<a href="single.html"><img src="images/19.jpg" /></a>
-					</div>
-					<div class="item">
-						<a href="single.html"><img src="images/20.jpg" /></a>
-					</div>
-					<div class="item">
-						<a href="single.html"><img src="images/21.jpg" /></a>
-					</div>
+				<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
+                   <?php else: ?>
+                   	<p><?php esc_html_e('Sorry, no posts are match.'); ?></p>
+				<?php endif; ?>
 				</div>
 			</div>
 			<div class="zerogrid wrap-footer">

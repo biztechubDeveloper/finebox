@@ -77,6 +77,51 @@ add_action( 'after_setup_theme', 'fun_theme_setup' );
 *
 * Enqueue style
 **/
+
+//Register Post Type
+
+function postTpypeAdded(){
+
+	
+	$labels = array(
+		'name'                  => _x( 'Add Carosule', 'Post Type General Name', 'fun' ),
+		'singular_name'         => _x( 'Carosule', 'Post Type Singular Name', 'fun' ),
+		'menu_name'             => __( 'Image Carosule', 'fun' ),
+		'name_admin_bar'        => __( 'Carosule', 'fun' ),
+		'archives'              => __( 'Item Archives', 'fun' ),
+		'attributes'            => __( 'Item Attributes', 'fun' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'fun' ),
+		'all_items'             => __( 'All Items', 'fun' ),
+		'add_new_item'          => __( 'Add New Item', 'fun' ),
+		'add_new'               => __( 'Add New', 'fun' ),
+		'new_item'              => __( 'New Item', 'fun' )
+		);
+	$args = array(
+		'label'                 => __( 'Post carosule', 'fun' ),
+		'description'           => __( 'Post carosule Description', 'fun' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor','thumbnail' ),
+		'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => true,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'menu_icon'             => 'dashicons-format-gallery',
+		'capability_type'       => 'page',
+	);
+	register_post_type('carosule', $args);
+
+}
+add_action("init", 'postTpypeAdded' );
+
+
 function fun_js_css(){
 wp_enqueue_style("fun-zerogrid", get_template_directory_uri().'/css/zerogrid.css');
 wp_enqueue_style("fun-style", get_template_directory_uri().'/css/style.css');
