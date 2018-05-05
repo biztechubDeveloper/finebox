@@ -138,6 +138,28 @@ wp_enqueue_script( 'fun-custom', get_theme_file_uri( '/js/custom.js' ), array( '
 }
 add_action("wp_enqueue_scripts",'fun_js_css');
 
+add_action('widgets_init','aboutUs');
+function aboutUs(){
+	register_sidebar(array(
+         'name'         => esc_html__('About us','fun'),
+        'id'            => 'about-sidebar',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="wid-header"><h5>',
+		'after_title'   => '</h5>',
+	));
+	register_sidebar(array(
+         'name'         => esc_html__('Tag','fun'),
+        'id'            => 'about-tag',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="wid-header"><h5>',
+		'after_title'   => '</h5>',
+	));
+}
+
 /*
 * redux framework included
 */
