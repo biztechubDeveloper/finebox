@@ -158,6 +158,15 @@ function aboutUs(){
 		'before_title'  => '<div class="wid-header"><h5>',
 		'after_title'   => '</h5>',
 	));
+	register_sidebar(array(
+         'name'         => esc_html__('Gallery','fun'),
+        'id'            => 'about-gallery',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="wid-header"><h5>',
+		'after_title'   => '</h5>',
+	));
 }
 
 /*
